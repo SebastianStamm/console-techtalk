@@ -1,0 +1,28 @@
+<script>
+  const complexObject = [
+    {
+      id: "1",
+      businessKey: "abc",
+      name: "Example 1",
+      startDate: "2019-05-09T12:00:00.000",
+      nestedArray: [1, 2, 3, 4]
+    },
+    {
+      id: "2",
+      businessKey: "test",
+      name: "Test Instance",
+      startDate: "2019-04-01T12:00:00.000",
+      nestedArray: [1, 2, 3, 4]
+    },
+    {
+      id: "3",
+      businessKey: null,
+      name: "Foobar",
+      startDate: "2019-04-01T11:00:00.000",
+      nestedArray: [1, 2, 3, 4]
+    }
+  ];
+
+  console.log(complexObject);
+  console.table(complexObject, ["name", "businessKey"]);
+</script>

@@ -1,0 +1,15 @@
+<script>
+  (async () => {
+    const before = Date.now();
+
+    await veryComplexOperation();
+
+    const after = Date.now();
+
+    console.log("operation took", after - before, "ms");
+  })();
+
+  async function veryComplexOperation() {
+    return new Promise(resolve => setTimeout(resolve, 1000));
+  }
+</script>

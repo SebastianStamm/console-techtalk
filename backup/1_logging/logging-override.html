@@ -1,0 +1,29 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+<input id="input" />
+<button onclick="output.textContent = moment(input.value)">Convert to moment</button>
+<p id="output" /></p>
+
+<script>
+  // console.warn = undefined;
+
+  // console.warn = function(args) {
+  //   alert(args);
+  // };
+
+  // (warn => {
+  //   console.warn = (...args) => {
+  //     alert(...args); // or whatever custom code you want
+  //     warn(...args);
+  //   }
+  // })(console.warn);
+  // common pattern when you want to add a handler whenever another function is called
+  // see https://github.com/camunda/camunda-bpm-examples/blob/master/cockpit/request-interceptor/requestInterceptor.js
+  // for another example
+
+
+  // (log => {
+  //   console.warn = msg => {
+  //     log(`%c${msg}`, "font-family: 'Karumbi'; font-size: 2em;");
+  //   };
+  // })(console.warn);
+</script>

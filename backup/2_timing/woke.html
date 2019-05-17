@@ -1,0 +1,13 @@
+<script>
+  (async () => {
+    console.time();
+
+    await veryComplexOperation();
+
+    console.timeEnd();
+  })();
+
+  async function veryComplexOperation() {
+    return new Promise(resolve => setTimeout(resolve, 1000));
+  }
+</script>

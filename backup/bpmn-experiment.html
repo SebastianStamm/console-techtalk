@@ -1,0 +1,49 @@
+<script src="bpmn.js"></script>
+<body>
+  <h1 style="margin-top: 20vh; text-align: center;">Please open your browser console to see your bpmn diagram</h1>
+  <div id="container" style="width: 1126px; height: 180px; visibility: hidden;" />
+  <script>
+    (async () => {
+      var response = await fetch("example.bpmn"); // my BPMN 2.0 xml
+      var xml = await response.text();
+
+      var viewer = new BpmnJS({
+        container: "#container"
+      });
+
+      viewer.importXML(xml, function(err) {
+        viewer.get('zoomScroll').reset();
+
+        var svgData = new XMLSerializer().serializeToString(
+          document.querySelector("svg")
+        );
+
+        var canvas = document.createElement("canvas");
+        canvas.setAttribute("width", "1126");
+        canvas.setAttribute("height", "180");
+
+        var ctx = canvas.getContext("2d");
+
+        var img = document.createElement("img");
+        img.setAttribute(
+          "src",
+          "data:image/svg+xml;base64," +
+            btoa(unescape(encodeURIComponent(svgData)))
+        );
+
+        img.onload = function() {
+          ctx.drawImage(img, 0, 0);
+
+          var dataUrl = canvas.toDataURL("image/png");
+
+          console.log(
+            "%cXXXXXXXXXXXXXXX",
+            "background:url('" +
+              dataUrl +
+              "'); background-repeat: no-repeat; color:rgba(0,0,0,0); font-size:180px; display:block;"
+          );
+        };
+      });
+    })();
+  </script>
+</body>

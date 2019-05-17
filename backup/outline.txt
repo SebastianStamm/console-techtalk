@@ -1,0 +1,30 @@
+introduction:
+
+- console.log, info, warn, error, debug
+ -- Browser differences, info in Chrome vs. in ff (icon), stack trace for warn in Chrome
+- overriding default console log handlers
+
+- let's log some stuff
+ -> strings
+ -> concatenated strings
+ -> objects
+ -> concatenated objects
+ -> dom elements? --> console.dir
+ -> complex elements --> console.table
+
+
+- timing stuff
+ - console.time
+ - profile stuff
+
+
+- groups
+
+
+- count
+
+
+Fancy logging:
+ - https://www.facebook.com/
+ - https://developer.mozilla.org/en-US/docs/Web/API/console#Usage
+ - styling text logs, journey into madness
